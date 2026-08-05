@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var rotuloCurrency = $RotuloCurrency
+@onready var cardUpgClick = $PainelShop/CardUpgClick
+
 
 
 func _on_botao_inicial_pressed() -> void:
@@ -18,3 +20,9 @@ func _on_botao_inicial_pressed() -> void:
 	#Retorna o elemento para o original
 	#$BotaoInicial.color = Color(0.0, 0.0, 1.0, 1.0)
 	
+
+
+func _on_comprar_upg_click_pressed() -> void:
+	Global.comprar_upg_click()
+	rotuloCurrency.text = "Currency: %d" % [Global.currency]
+	$PainelShop/CardUpgClick/Button.text = "Comprar - $ %d" % [Global.upg_click_custo]
