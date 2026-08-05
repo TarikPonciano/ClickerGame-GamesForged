@@ -15,14 +15,14 @@ text = "Currency: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=629899661]
+[node name="BotaoInicial" type="ColorRect" parent="." unique_id=629899661]
 offset_left = 336.0
 offset_top = 212.0
 offset_right = 521.0
 offset_bottom = 271.0
 color = Color(0.1254902, 0.48235294, 1, 1)
 
-[node name="Label" type="Label" parent="ColorRect" unique_id=1465717159]
+[node name="Label" type="Label" parent="BotaoInicial" unique_id=1465717159]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 15.0
@@ -31,7 +31,7 @@ offset_bottom = 49.0
 theme_override_font_sizes/font_size = 24
 text = "Clique Aqui"
 
-[node name="BotaoInicial" type="Button" parent="ColorRect" unique_id=1290883990]
+[node name="BotaoInicial" type="Button" parent="BotaoInicial" unique_id=1290883990]
 layout_mode = 0
 offset_right = 186.0
 offset_bottom = 59.0
@@ -66,4 +66,4 @@ offset_bottom = 50.0
 theme_override_font_sizes/font_size = 32
 text = "UPGRADES"
 
-[connection signal="pressed" from="ColorRect/BotaoInicial" to="." method="_on_botao_inicial_pressed"]
+[connection signal="pressed" from="BotaoInicial/BotaoInicial" to="." method="_on_botao_inicial_pressed"]
