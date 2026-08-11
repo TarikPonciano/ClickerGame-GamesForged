@@ -7,6 +7,7 @@ extends Node2D
 
 func _on_botao_inicial_pressed() -> void:
 	Global.executarClique()
+	
 	rotuloCurrency.text = "Currency: %d" % [Global.currency]
 	
 	# Lógica de feedback de click
