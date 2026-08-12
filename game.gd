@@ -35,3 +35,8 @@ func _on_comprar_gerador_1_pressed() -> void:
 	# Etapa Front
 	rotuloCurrency.text = "Currency: %d" % [Global.currency]
 	$PainelShop/CardGerador1/Button.text = "Comprar - $ %d" % [Global.upg_gerador_1_custo]
+
+
+func _on_ativador_ganho_passivo_timeout() -> void:
+	Global.calcular_ganho_passivo()
+	rotuloCurrency.text = "Currency: %d" % [Global.currency]
