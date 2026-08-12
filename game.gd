@@ -27,3 +27,11 @@ func _on_comprar_upg_click_pressed() -> void:
 	Global.comprar_upg_click()
 	rotuloCurrency.text = "Currency: %d" % [Global.currency]
 	$PainelShop/CardUpgClick/Button.text = "Comprar - $ %d" % [Global.upg_click_custo]
+
+
+func _on_comprar_gerador_1_pressed() -> void:
+	# Etapa Back (Global)
+	Global.comprar_gerador_1()
+	# Etapa Front
+	rotuloCurrency.text = "Currency: %d" % [Global.currency]
+	$PainelShop/CardGerador1/Button.text = "Comprar - $ %d" % [Global.upg_gerador_1_custo]

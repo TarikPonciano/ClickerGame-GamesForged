@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ct62i8sie02ie" path="res://game.gd" id="1_80nbo"]
 
+[sub_resource type="Theme" id="Theme_80nbo"]
+
 [node name="Game" type="Node2D" unique_id=910643490]
 script = ExtResource("1_80nbo")
 
@@ -84,6 +86,40 @@ offset_right = 174.0
 offset_bottom = 73.0
 text = "Comprar - $ 10"
 
+[node name="CardGerador1" type="ColorRect" parent="PainelShop" unique_id=1226035138]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 152.0
+offset_right = 236.0
+offset_bottom = 232.0
+theme = SubResource("Theme_80nbo")
+color = Color(1, 0, 1, 1)
+
+[node name="Label" type="Label" parent="PainelShop/CardGerador1" unique_id=397221115]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -30.0
+offset_right = 55.5
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Mouse Básico"
+
+[node name="Button" type="Button" parent="PainelShop/CardGerador1" unique_id=635067626]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 42.0
+offset_right = 174.0
+offset_bottom = 73.0
+text = "Comprar - $ 50"
+
 [node name="PainelUpgrades" type="Panel" parent="." unique_id=1465480360]
 offset_left = 17.0
 offset_top = 439.0
@@ -101,3 +137,4 @@ text = "UPGRADES"
 
 [connection signal="pressed" from="BotaoInicial/BotaoInicial" to="." method="_on_botao_inicial_pressed"]
 [connection signal="pressed" from="PainelShop/CardUpgClick/Button" to="." method="_on_comprar_upg_click_pressed"]
+[connection signal="pressed" from="PainelShop/CardGerador1/Button" to="." method="_on_comprar_gerador_1_pressed"]

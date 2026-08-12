@@ -8,6 +8,8 @@ var currency = 0
 var upg_click_nivel = 1
 var upg_click_custo = 10
 
+# Upgrade Gerador 1
+
 
 func executarClique():
 	currency += 1 * upg_click_nivel
