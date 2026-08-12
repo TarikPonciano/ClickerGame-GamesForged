@@ -41,4 +41,3 @@ func calcular_ganho_passivo():
 	ganho_passivo = (upg_gerador_1_nivel * upg_gerador_1_poder)
 	currency += ganho_passivo
 	
-		
