@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://0qritd1mf84y"]
 
 [ext_resource type="Script" uid="uid://ct62i8sie02ie" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://m82j1mlmydis" path="res://painel_modal_upgrade.gd" id="2_e2o6t"]
 
 [sub_resource type="Theme" id="Theme_80nbo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80nbo"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2o6t"]
+bg_color = Color(0.9893643, 0.0003717619, 0.8984996, 1)
 
 [node name="Game" type="Node2D" unique_id=910643490]
 script = ExtResource("1_80nbo")
@@ -148,10 +155,109 @@ offset_bottom = 50.0
 theme_override_font_sizes/font_size = 32
 text = "UPGRADES"
 
+[node name="Upgrade1" type="Button" parent="PainelUpgrades" unique_id=1122943337]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 50.0
+offset_right = 83.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_80nbo")
+text = "1"
+
+[node name="Upgrade2" type="Button" parent="PainelUpgrades" unique_id=1620771263]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 48.0
+offset_right = 170.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_80nbo")
+text = "2"
+
+[node name="Upgrade3" type="Button" parent="PainelUpgrades" unique_id=693186393]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 48.0
+offset_right = 261.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_80nbo")
+text = "3"
+
+[node name="Upgrade4" type="Button" parent="PainelUpgrades" unique_id=1584745408]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 48.0
+offset_right = 351.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_80nbo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e2o6t")
+text = "4"
+
+[node name="Upgrade5" type="Button" parent="PainelUpgrades" unique_id=1589284591]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 48.0
+offset_right = 443.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_80nbo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e2o6t")
+text = "5"
+
 [node name="AtivadorGanhoPassivo" type="Timer" parent="." unique_id=906048026]
 autostart = true
+
+[node name="PainelModalUpgrade" type="Panel" parent="." unique_id=219180246]
+offset_left = 51.0
+offset_top = 162.0
+offset_right = 278.0
+offset_bottom = 426.0
+script = ExtResource("2_e2o6t")
+
+[node name="Preço" type="Label" parent="PainelModalUpgrade" unique_id=1088319161]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 223.0
+offset_right = 206.0
+offset_bottom = 253.0
+text = "R$ 00.00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Descrição" type="Label" parent="PainelModalUpgrade" unique_id=689124115]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 62.0
+offset_right = 213.0
+offset_bottom = 188.0
+text = "DESCRIÇÃO"
+autowrap_mode = 3
+
+[node name="Titulo" type="Label" parent="PainelModalUpgrade" unique_id=1514946634]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 2.0
+offset_right = 204.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 24
+text = "TITULO"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="BotaoInicial/BotaoInicial" to="." method="_on_botao_inicial_pressed"]
 [connection signal="pressed" from="PainelShop/CardUpgClick/Button" to="." method="_on_comprar_upg_click_pressed"]
 [connection signal="pressed" from="PainelShop/CardGerador1/Button" to="." method="_on_comprar_gerador_1_pressed"]
+[connection signal="mouse_entered" from="PainelUpgrades/Upgrade1" to="PainelModalUpgrade" method="_on_upgrade_mouse_dentro" flags=18]
+[connection signal="mouse_entered" from="PainelUpgrades/Upgrade2" to="PainelModalUpgrade" method="_on_upgrade_mouse_dentro" flags=18]
+[connection signal="mouse_entered" from="PainelUpgrades/Upgrade3" to="PainelModalUpgrade" method="_on_upgrade_mouse_dentro" flags=18]
+[connection signal="mouse_entered" from="PainelUpgrades/Upgrade4" to="PainelModalUpgrade" method="_on_upgrade_mouse_dentro" flags=18]
+[connection signal="mouse_entered" from="PainelUpgrades/Upgrade5" to="PainelModalUpgrade" method="_on_upgrade_mouse_dentro"]
 [connection signal="timeout" from="AtivadorGanhoPassivo" to="." method="_on_ativador_ganho_passivo_timeout"]
