@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0qritd1mf84y"]
 
 [ext_resource type="Script" uid="uid://ct62i8sie02ie" path="res://game.gd" id="1_80nbo"]
-[ext_resource type="Script" uid="uid://m82j1mlmydis" path="res://painel_modal_upgrade.gd" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://cq6qlnaq8a5ls" path="res://modal_tooltip.gd" id="2_e2o6t"]
 
 [sub_resource type="Theme" id="Theme_80nbo"]
 
@@ -215,49 +215,50 @@ text = "5"
 [node name="AtivadorGanhoPassivo" type="Timer" parent="." unique_id=906048026]
 autostart = true
 
-[node name="PainelModalUpgrade" type="Panel" parent="." unique_id=219180246]
-offset_left = 51.0
-offset_top = 162.0
-offset_right = 278.0
-offset_bottom = 426.0
+[node name="ModalTooltip" type="Panel" parent="." unique_id=2052822898]
+offset_right = 197.0
+offset_bottom = 339.0
 script = ExtResource("2_e2o6t")
+metadata/_edit_use_anchors_ = true
 
-[node name="Preço" type="Label" parent="PainelModalUpgrade" unique_id=1088319161]
+[node name="Titulo" type="Label" parent="ModalTooltip" unique_id=2023380963]
 layout_mode = 0
-offset_left = 28.0
-offset_top = 223.0
-offset_right = 206.0
-offset_bottom = 253.0
-text = "R$ 00.00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Descrição" type="Label" parent="PainelModalUpgrade" unique_id=689124115]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 62.0
-offset_right = 213.0
-offset_bottom = 188.0
-text = "DESCRIÇÃO"
-autowrap_mode = 3
-
-[node name="Titulo" type="Label" parent="PainelModalUpgrade" unique_id=1514946634]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 2.0
-offset_right = 204.0
-offset_bottom = 43.0
+offset_left = 14.0
+offset_top = 3.0
+offset_right = 180.0
+offset_bottom = 53.0
 theme_override_font_sizes/font_size = 24
-text = "TITULO"
+text = "Titulo"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Descricao" type="Label" parent="ModalTooltip" unique_id=1919016344]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 72.0
+offset_right = 187.0
+offset_bottom = 243.0
+text = "Descrição"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Preco" type="Label" parent="ModalTooltip" unique_id=930686384]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 305.0
+offset_right = 177.0
+offset_bottom = 328.0
+text = "Preço: R$ 00.00"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="BotaoInicial/BotaoInicial" to="." method="_on_botao_inicial_pressed"]
 [connection signal="pressed" from="PainelShop/CardUpgClick/Button" to="." method="_on_comprar_upg_click_pressed"]
 [connection signal="pressed" from="PainelShop/CardGerador1/Button" to="." method="_on_comprar_gerador_1_pressed"]
-[connection signal="mouse_entered" from="PainelUpgrades/Upgrade1" to="PainelModalUpgrade" method="_on_upgrade_mouse_dentro" flags=18]
-[connection signal="mouse_entered" from="PainelUpgrades/Upgrade2" to="PainelModalUpgrade" method="_on_upgrade_mouse_dentro" flags=18]
-[connection signal="mouse_entered" from="PainelUpgrades/Upgrade3" to="PainelModalUpgrade" method="_on_upgrade_mouse_dentro" flags=18]
-[connection signal="mouse_entered" from="PainelUpgrades/Upgrade4" to="PainelModalUpgrade" method="_on_upgrade_mouse_dentro" flags=18]
-[connection signal="mouse_entered" from="PainelUpgrades/Upgrade5" to="PainelModalUpgrade" method="_on_upgrade_mouse_dentro"]
+[connection signal="mouse_entered" from="PainelUpgrades/Upgrade1" to="ModalTooltip" method="_on_elemento_visual_mouse_entered" flags=18]
+[connection signal="mouse_entered" from="PainelUpgrades/Upgrade2" to="ModalTooltip" method="_on_elemento_visual_mouse_entered" flags=18]
+[connection signal="mouse_entered" from="PainelUpgrades/Upgrade3" to="ModalTooltip" method="_on_elemento_visual_mouse_entered" flags=18]
+[connection signal="mouse_entered" from="PainelUpgrades/Upgrade4" to="ModalTooltip" method="_on_elemento_visual_mouse_entered" flags=18]
+[connection signal="mouse_entered" from="PainelUpgrades/Upgrade5" to="ModalTooltip" method="_on_elemento_visual_mouse_entered" flags=18]
 [connection signal="timeout" from="AtivadorGanhoPassivo" to="." method="_on_ativador_ganho_passivo_timeout"]
