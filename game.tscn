@@ -222,7 +222,9 @@ script = ExtResource("2_e2o6t")
 metadata/_edit_use_anchors_ = true
 
 [node name="Titulo" type="Label" parent="ModalTooltip" unique_id=2023380963]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.13569322
 offset_left = 14.0
 offset_top = 3.0
 offset_right = 180.0
@@ -231,10 +233,13 @@ theme_override_font_sizes/font_size = 24
 text = "Titulo"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Descricao" type="Label" parent="ModalTooltip" unique_id=1919016344]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.13864307
 offset_left = 10.0
 offset_top = 72.0
 offset_right = 187.0
@@ -257,8 +262,13 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="PainelShop/CardUpgClick/Button" to="." method="_on_comprar_upg_click_pressed"]
 [connection signal="pressed" from="PainelShop/CardGerador1/Button" to="." method="_on_comprar_gerador_1_pressed"]
 [connection signal="mouse_entered" from="PainelUpgrades/Upgrade1" to="ModalTooltip" method="_on_elemento_visual_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="PainelUpgrades/Upgrade1" to="ModalTooltip" method="_on_elemento_visual_mouse_exited"]
 [connection signal="mouse_entered" from="PainelUpgrades/Upgrade2" to="ModalTooltip" method="_on_elemento_visual_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="PainelUpgrades/Upgrade2" to="ModalTooltip" method="_on_elemento_visual_mouse_exited"]
 [connection signal="mouse_entered" from="PainelUpgrades/Upgrade3" to="ModalTooltip" method="_on_elemento_visual_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="PainelUpgrades/Upgrade3" to="ModalTooltip" method="_on_elemento_visual_mouse_exited"]
 [connection signal="mouse_entered" from="PainelUpgrades/Upgrade4" to="ModalTooltip" method="_on_elemento_visual_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="PainelUpgrades/Upgrade4" to="ModalTooltip" method="_on_elemento_visual_mouse_exited"]
 [connection signal="mouse_entered" from="PainelUpgrades/Upgrade5" to="ModalTooltip" method="_on_elemento_visual_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="PainelUpgrades/Upgrade5" to="ModalTooltip" method="_on_elemento_visual_mouse_exited"]
 [connection signal="timeout" from="AtivadorGanhoPassivo" to="." method="_on_ativador_ganho_passivo_timeout"]
