@@ -40,3 +40,7 @@ func _on_comprar_gerador_1_pressed() -> void:
 func _on_ativador_ganho_passivo_timeout() -> void:
 	Global.calcular_ganho_passivo()
 	rotuloCurrency.text = "Currency: %d" % [Global.currency]
+
+
+func _on_comprar_upgrade_pressed(source: BaseButton) -> void:
+	print(source.name)

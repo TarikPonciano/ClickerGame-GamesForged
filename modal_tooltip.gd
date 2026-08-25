@@ -8,14 +8,15 @@ extends Panel
 func _ready() -> void:
 	self.visible = false
 	
-
-
 func _on_elemento_visual_mouse_entered(source: Control) -> void:
 	self.visible = true
 	
+	# Colocar o modal na posição do mouse
+	#self.position = get_global_mouse_position() - Vector2(0,200)
+	
 	if source.name == "Upgrade1":
-		$Titulo.text	 = "RGB no Computador"
-		$Descricao.text = "As luzes piscantes lhe motivam para clicar mais rápido e precisamente!"
+		$Titulo.text = "RGB no Computador"
+		$Descricao.text = "As luzes piscantes lhe motivam para clicar mais rápido e precisamente! Multiplica os ganhos de click em 2x"
 		$Preco.text = "$ 200.00"
 	elif source.name == "Upgrade2":
 		$Titulo.text	 = "Teclado Mecânico da Hello Kitty"
