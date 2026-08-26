@@ -16,8 +16,20 @@ var upg_gerador_1_nivel = 0
 var upg_gerador_1_poder = 1
 var upg_gerador_1_custo = 50
 
+# Variáveis do Upgrade 1
+
+var upgrade_1_comprado = false
+var upgrade_1_custo = 200
+
 func executarClique():
-	currency += 1 * upg_click_nivel
+	var aumento = 1
+	
+	aumento *= upg_click_nivel
+	
+	if upgrade_1_comprado:
+		aumento *= 2
+	
+	currency += aumento
 	
 func comprar_upg_click():
 	if currency >= upg_click_custo:
@@ -41,3 +53,8 @@ func calcular_ganho_passivo():
 	ganho_passivo = (upg_gerador_1_nivel * upg_gerador_1_poder)
 	currency += ganho_passivo
 	
+func comprar_upgrade(upgrade_escolhido):
+	if upgrade_escolhido == "Upgrade1":
+		if currency >= upgrade_1_custo and upgrade_1_comprado == false:
+			currency -= upgrade_1_custo
+			upgrade_1_comprado = true

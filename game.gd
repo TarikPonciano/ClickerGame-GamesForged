@@ -3,6 +3,9 @@ extends Node2D
 @onready var rotuloCurrency = $RotuloCurrency
 @onready var cardUpgClick = $PainelShop/CardUpgClick
 
+#func _ready() -> void:
+	#$PainelUpgrades/Upgrade1.pressed.connect(_on_comprar_upgrade_pressed.bind($PainelUpgrades/Upgrade1))
+	#
 
 
 func _on_botao_inicial_pressed() -> void:
@@ -43,4 +46,8 @@ func _on_ativador_ganho_passivo_timeout() -> void:
 
 
 func _on_comprar_upgrade_pressed(source: BaseButton) -> void:
-	print(source.name)
+	
+	if source.name == "Upgrade1":
+		# Compra o upgrade no back
+		Global.comprar_upgrade("Upgrade1")
+		rotuloCurrency.text = "Currency: %d" % [Global.currency]
