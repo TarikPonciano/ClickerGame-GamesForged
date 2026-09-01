@@ -43,6 +43,14 @@ func _on_comprar_gerador_1_pressed() -> void:
 func _on_ativador_ganho_passivo_timeout() -> void:
 	Global.calcular_ganho_passivo()
 	rotuloCurrency.text = "Currency: %d" % [Global.currency]
+	
+	var tempo_espera = 1
+	
+	if Global.upgrade_2_comprado == true:
+		tempo_espera /= 2
+		
+	$AtivadorGanhoPassivo.wait_time = tempo_espera
+	
 
 
 func _on_comprar_upgrade_pressed(source: BaseButton) -> void:
@@ -50,4 +58,10 @@ func _on_comprar_upgrade_pressed(source: BaseButton) -> void:
 	if source.name == "Upgrade1":
 		# Compra o upgrade no back
 		Global.comprar_upgrade("Upgrade1")
-		rotuloCurrency.text = "Currency: %d" % [Global.currency]
+		if Global.upgrade_1_comprado == true:
+			source.add_theme_stylebox_override("normal", preload("res://estilo_botao_comprado.tres"))
+		
+	elif source.name == "Upgrade2":
+		Global.comprar_upgrade("Upgrade2")
+
+	rotuloCurrency.text = "Currency: %d" % [Global.currency]

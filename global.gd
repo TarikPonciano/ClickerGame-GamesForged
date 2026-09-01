@@ -21,6 +21,11 @@ var upg_gerador_1_custo = 50
 var upgrade_1_comprado = false
 var upgrade_1_custo = 200
 
+# Variáveis do Upgrade 2
+
+var upgrade_2_comprado = false
+var upgrade_2_custo = 500
+
 func executarClique():
 	var aumento = 1
 	
@@ -58,3 +63,8 @@ func comprar_upgrade(upgrade_escolhido):
 		if currency >= upgrade_1_custo and upgrade_1_comprado == false:
 			currency -= upgrade_1_custo
 			upgrade_1_comprado = true
+	elif upgrade_escolhido == "Upgrade2":
+		if currency >= upgrade_2_custo and upgrade_2_comprado == false:
+			currency -= upgrade_2_custo
+			upgrade_2_comprado = true
+			
