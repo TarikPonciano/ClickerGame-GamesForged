@@ -1,6 +1,5 @@
 extends Node
 
-
 var currency = 0
 var ganho_passivo = 0
 
