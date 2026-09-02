@@ -19,8 +19,17 @@ func salvar_jogo():
 	
 	if OS.has_feature("web"):
 		var comando_js = "localStorage.setItem('%s', %s);" % [LS_KEY, json_dados]
+		
 		JavaScriptBridge.eval(comando_js)
 	else:
-		pass
+		var arquivo = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+		
+		if arquivo == null:
+			print("ERRO AO SALVAR ARQUIVO!")
+			return
+		
+		arquivo.store_string(json_dados)
+		arquivo.close()
+			
 	
 	
