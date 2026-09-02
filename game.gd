@@ -7,6 +7,9 @@ extends Node2D
 	#$PainelUpgrades/Upgrade1.pressed.connect(_on_comprar_upgrade_pressed.bind($PainelUpgrades/Upgrade1))
 	#
 
+func _ready() -> void:
+	SaveLoad.carregar_jogo()
+	rotuloCurrency.text = "Currency: %d" % [Global.currency]
 
 func _on_botao_inicial_pressed() -> void:
 	Global.executarClique()
@@ -69,3 +72,7 @@ func _on_comprar_upgrade_pressed(source: BaseButton) -> void:
 		
 		
 	rotuloCurrency.text = "Currency: %d" % [Global.currency]
+
+
+func _on_salvar_jogo_timeout() -> void:
+	SaveLoad.salvar_jogo()
