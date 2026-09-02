@@ -15,9 +15,11 @@ func salvar_jogo():
 		"upgrade_1_comprado": Global.upgrade_1_comprado,
 		"upgrade_2_comprado":  Global.upgrade_2_comprado
 	} 
+	var json_dados = JSON.stringify(dados_jogo)
 	
 	if OS.has_feature("web"):
-		pass
+		var comando_js = "localStorage.setItem('%s', %s);" % [LS_KEY, json_dados]
+		JavaScriptBridge.eval(comando_js)
 	else:
 		pass
 	
