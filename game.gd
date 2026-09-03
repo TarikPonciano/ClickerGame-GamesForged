@@ -9,7 +9,15 @@ extends Node2D
 
 func _ready() -> void:
 	SaveLoad.carregar_jogo()
+	
 	rotuloCurrency.text = "Currency: %d" % [Global.currency]
+	
+	$PainelShop/CardUpgClick/Button.text = "Comprar - $ %d" % [Global.upg_click_custo]
+	
+	$PainelShop/CardGerador1/Button.text = "Comprar - $ %d" % [Global.upg_gerador_1_custo]
+	
+	if Global.upgrade_1_comprado == true:
+		$PainelUpgrades/Upgrade1.add_theme_stylebox_override("normal", preload("res://estilo_botao_comprado.tres"))
 
 func _on_botao_inicial_pressed() -> void:
 	Global.executarClique()
@@ -76,3 +84,10 @@ func _on_comprar_upgrade_pressed(source: BaseButton) -> void:
 
 func _on_salvar_jogo_timeout() -> void:
 	SaveLoad.salvar_jogo()
+	print("Save Aconteceu")
+
+
+func _on_realizar_ascencao_pressed() -> void:
+	Global.ascender()
+	SaveLoad.salvar_jogo()
+	get_tree().reload_current_scene()

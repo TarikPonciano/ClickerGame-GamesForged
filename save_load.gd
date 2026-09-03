@@ -14,8 +14,12 @@ func salvar_jogo():
 		"upg_gerador_1_poder": Global.upg_gerador_1_poder,
 		"upg_gerador_1_custo": Global.upg_gerador_1_custo,
 		"upgrade_1_comprado": Global.upgrade_1_comprado,
-		"upgrade_2_comprado":  Global.upgrade_2_comprado
+		"upgrade_2_comprado":  Global.upgrade_2_comprado,
+		"nivel_ascencao": Global.nivel_ascencao,
+		"custo_ascencao": Global.custo_ascencao
 	} 
+	
+	print(dados_jogo)
 	var json_dados = JSON.stringify(dados_jogo)
 	
 	if OS.has_feature("web"):
@@ -69,6 +73,11 @@ func carregar_jogo():
 	Global.upg_gerador_1_custo = dados_prontos["upg_gerador_1_custo"]
 	Global.upg_gerador_1_nivel = dados_prontos["upg_gerador_1_nivel"]
 	Global.upg_gerador_1_poder = dados_prontos["upg_gerador_1_poder"]
+	Global.upg_click_nivel = dados_prontos["upg_click_nivel"]
+	Global.upg_click_custo = dados_prontos["upg_click_custo"]
+	Global.upgrade_1_comprado = dados_prontos["upgrade_1_comprado"]
+	Global.nivel_ascencao  = dados_prontos["nivel_ascencao"]
+	Global.custo_ascencao  = dados_prontos["custo_ascencao"]
 	#Global.ganho_passivo = dados_json["ganho_passivo"]
 		
 		
